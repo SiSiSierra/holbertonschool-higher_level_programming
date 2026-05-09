@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def uppercase(str):
     for i in str:
-        print("{0:c}".format(ord(i) - 32 if ord(i) >= 97 and ord(i) <= 122 else ord(i)), end = '')
+        offset = 0
+        if 97 <= ord(i) <= 122:
+            offset = 32
+        print("{0:c}".format(ord(i) - offset ), end='')
     print('')
