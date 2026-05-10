@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+import calculator_1 as calc
+
+
+def main():
+    a = 10
+    b = 5
+    print("{0} + {1} = {2}".format(a, b, calc.add(a, b)))
+    print("{0} - {1} = {2}".format(a, b, calc.sub(a, b)))
+    print("{0} * {1} = {2}".format(a, b, calc.mul(a, b)))
+    print("{0} / {1} = {2}".format(a, b, calc.div(a, b)))
+
+
+if __name__ == "__main__":
+    main()
