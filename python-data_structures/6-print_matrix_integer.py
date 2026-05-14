@@ -6,5 +6,4 @@ def print_matrix_integer(matrix=[]):
                 suffix = ' '
             else:
                 suffix = '\n'
-            print("{:d}".format(i[j]), end = suffix)
-
+            print("{:d}".format(i[j]), end=suffix)
