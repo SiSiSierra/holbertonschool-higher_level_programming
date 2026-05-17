@@ -1,0 +1,17 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1, 2)
+3
+>>> add_integer()
+TypeError
+>>> add_integer(5)
+103
+>>> add_integer(1.1, 2.2)
+3
+>>> add_integer(-5, 10)
+5
+>>> add_integer("hi")
+a must be an integer
+>>> add_integer(1, "hello")
+b must be an integer
+>>> add_integer([1, 2])
+a must be an integer
