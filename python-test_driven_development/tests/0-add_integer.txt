@@ -2,7 +2,9 @@
 >>> add_integer(1, 2)
 3
 >>> add_integer()
-TypeError
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(5)
 103
 >>> add_integer(1.1, 2.2)
@@ -10,8 +12,15 @@ TypeError
 >>> add_integer(-5, 10)
 5
 >>> add_integer("hi")
-a must be an integer
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
 >>> add_integer(1, "hello")
-b must be an integer
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
 >>> add_integer([1, 2])
-a must be an integer
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
