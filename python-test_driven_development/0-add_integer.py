@@ -4,6 +4,8 @@
 Functions:
     add_integer(a, b)
 """
+
+
 def add_integer(a, b=98):
     """ Adds integers a and b together
 
