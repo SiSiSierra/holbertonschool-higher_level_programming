@@ -11,6 +11,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_positive(self):
         self.assertEqual(max_integer([1, 2]), 2)
         self.assertEqual(max_integer([5, 55, 100000, 2]), 100000)
+        self.assertEqual(max_integer([99, 1, 2]), 99)
+        self.assertEqual(max_integer([5]), 5)
 
     def test_negative(self):
         self.assertEqual(max_integer([-5, 5]), 5)
