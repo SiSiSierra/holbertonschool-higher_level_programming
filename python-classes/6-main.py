@@ -16,8 +16,10 @@ my_square_3.my_print()
 
 print("--")
 
-my_square_3.position = (0, 0)
-my_square_3.size = 0
+my_square_3.position = (10, 10)
+my_square_3.size = 20
 my_square_3.my_print()
+
+print(f"{my_square_3.position}")
 
 print("--")
