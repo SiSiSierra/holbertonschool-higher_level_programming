@@ -26,7 +26,9 @@ class Rectangle():
             return ""
         out = ""
         for i in range(self.height):
-            out += "#" * self.width + "\n"
+            out += "#" * self.width
+            if i + 1 != self.height:
+                out += "\n"
         return out
 
     @property
