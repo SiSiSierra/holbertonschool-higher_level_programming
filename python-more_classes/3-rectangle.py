@@ -23,7 +23,7 @@ class Rectangle():
 
     def __str__(self):
         if self.width == 0:
-            return out
+            return ""
         out = ""
         for i in range(self.height):
             out += "#" * self.width + "\n"
