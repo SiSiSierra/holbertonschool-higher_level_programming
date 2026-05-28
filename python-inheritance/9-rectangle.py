@@ -23,7 +23,7 @@ class Rectangle(BaseGeometry):
 
     def __repr__(self):
         print(self.str())
-    
+
     def area(self):
         """Defines the area of the rectangle
 
