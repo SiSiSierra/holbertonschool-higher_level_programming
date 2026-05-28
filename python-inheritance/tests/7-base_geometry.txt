@@ -23,3 +23,27 @@ TypeError: transgender must be an integer
 Traceback (most recent call last):
 ...
 TypeError: Ru must be an integer
+>>> a.integer_validator("Ru")
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> a.integer_validator("age", "4")
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> a.integer_validator("age", (4,))
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> a.integer_validator("age", [4])
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> a.integer_validator("age", {5, 6})
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> a.integer_validator("age", None)
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
