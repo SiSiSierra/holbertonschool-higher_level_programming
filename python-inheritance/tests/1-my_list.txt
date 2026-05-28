@@ -4,6 +4,8 @@
 <class '1-my_list.MyList'>
 >>> print(a)
 []
+>>> a.print_sorted()
+[]
 >>> a.append(1)
 >>> a.append(5)
 >>> a.append(0)
