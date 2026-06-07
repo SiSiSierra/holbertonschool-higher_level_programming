@@ -17,7 +17,7 @@ def main():
         args = sys.argv[1:]
     try:
         old_args = load_from_json_file("add_item.json")
-    except:
+    except Exception:
         old_args = []
     old_args.extend(args)
     save_to_json_file(old_args, "add_item.json")
