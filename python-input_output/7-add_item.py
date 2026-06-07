@@ -15,7 +15,10 @@ def main():
         args = []
     else:
         args = sys.argv[1:]
-    old_args = load_from_json_file("add_item.json")
+    try:
+        old_args = load_from_json_file("add_item.json")
+    except:
+        old_args = []
     old_args.extend(args)
     save_to_json_file(old_args, "add_item.json")
     return
