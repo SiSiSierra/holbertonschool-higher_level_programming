@@ -45,6 +45,15 @@ class Student:
         Parameters:
             json: Dict to use
         """
-        self.first_name = json['first_name']
-        self.last_name = json['last_name']
-        self.age = json['age']
+        try:
+            self.first_name = json['first_name']
+        except KeyError:
+            pass
+        try:
+            self.last_name = json['last_name']
+        except KeyError:
+            pass
+        try:
+            self.age = json['age']
+        except KeyError:
+            pass
