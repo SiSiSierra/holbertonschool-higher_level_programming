@@ -14,7 +14,7 @@ def pascal_triangle(n):
 
     Returns: ordered list of ints based on pascals triangle
     """
-    
+
     tri = []
     if n <= 0:
         return []
@@ -25,6 +25,7 @@ def pascal_triangle(n):
         tri.append(row)
     return tri
 
+
 def factorial(n):
     if n == 0:
         return 1
@@ -33,6 +34,7 @@ def factorial(n):
         i = i * (n - 1)
         n -= 1
     return i
+
 
 def combination(n, k):
     a = factorial(n)
