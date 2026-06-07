@@ -41,4 +41,4 @@ def combination(n, k):
     b = factorial(k)
     c = factorial(n-k)
     d = b * c
-    return int(a / d)
+    return a // d
