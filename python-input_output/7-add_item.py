@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Main run file"""
-import json, sys
+import json
+import sys
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
+
 
 def main():
     """ Add runtime args to json file
@@ -17,6 +19,7 @@ def main():
     old_args.extend(args)
     save_to_json_file(old_args, "add_item.json")
     return
+
 
 if __name__ == "__main__":
     main()
