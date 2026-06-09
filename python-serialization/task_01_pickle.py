@@ -8,6 +8,13 @@ import pickle
 
 
 class CustomObject():
+    """CustomObject
+
+    Functions:
+        display
+        serialize
+        deserialize
+    """
 
     def __init__(self, name, age, is_student):
         self.name = name
