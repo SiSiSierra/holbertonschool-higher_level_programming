@@ -16,6 +16,7 @@ def fetch_and_save_posts():
         with open('posts.csv', 'w', newline='') as f:
             fieldnames = ['id', 'title', 'body']
             writer = csv.DictWriter(f, fieldnames, extrasaction='ignore')
+            writer.writeheader()
             for post in j:
                 writer.writerow(post)
 
