@@ -39,7 +39,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(bytes(json.dumps(info), 'utf-8'))
         else:
-            self.send_error(404, "Endpoint not found")
+            self.send_response(404)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b'Endpoint not found')
 handler = Handler
 with socketserver.TCPServer(("", PORT), handler) as httpd:
     print("Serving at port", PORT)
