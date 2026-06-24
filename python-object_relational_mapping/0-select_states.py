@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-# Module to test connecting to the local database
+""" Module to test connecting to the local database
+
+Functions
+    main()
+"""
 import MySQLdb
 import sys
 
 
 def main():
-    # Get and print all items from the local database
+    """ main program function
+    """
     db = MySQLdb.connect('localhost', sys.argv[1], sys.argv[2], sys.argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id;")
