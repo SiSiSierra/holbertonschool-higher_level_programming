@@ -13,7 +13,8 @@ def main():
     """
     db = MySQLdb.connect('localhost', sys.argv[1], sys.argv[2], sys.argv[3])
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE \'N%\' ORDER BY id;")
+    cursor.execute("SELECT * FROM states WHERE name COLLATE utf8mb4_bin \
+LIKE \'N%\' ORDER BY id;")
     m = cursor.fetchall()
     for state in m:
         print(state)
