@@ -13,8 +13,8 @@ def main():
     """
     db = MySQLdb.connect('localhost', sys.argv[1], sys.argv[2], sys.argv[3])
     cursor = db.cursor()
-    cursor.execute(f"SELECT * FROM states WHERE name = \"{sys.argv[4]}\" \
-ORDER BY id;")
+    cursor.execute("SELECT * FROM states WHERE name = \"{}\" \
+ORDER BY id;".format(sys.argv[4]))
     m = cursor.fetchall()
     for state in m:
         print(state)
