@@ -12,7 +12,5 @@ if __name__ == "__main__":
             .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     conn = engine.connect()
     result = conn.execute(select([State]).order_by("id"))
-    i = 0
     for row in result:
-        i += 1
-        print("{}: {}".format(i, row[1]))
+        print("{}: {}".format(row[0], row[1]))
