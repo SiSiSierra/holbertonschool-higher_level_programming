@@ -11,6 +11,7 @@ if __name__ == "__main__":
             'mysql+mysqldb://{}:{}@localhost/{}'
             .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     conn = engine.connect()
-    result = conn.execute(select([State]).order_by("id"))
+    s = select([State]).order_by("id")
+    result = conn.execute(s)
     for row in result:
         print("{}: {}".format(row[0], row[1]))
