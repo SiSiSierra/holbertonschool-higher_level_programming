@@ -15,5 +15,8 @@ if __name__ == "__main__":
     session = Session()
     result = session.query(State).where(
             State.name == f"{sys.argv[4]}").order_by(State.id)
+    if result.count() == 0:
+        print("Not found")
+        exit
     for row in result:
-        print(f"{row.id}: {row.name}")
+        print(row.id)
