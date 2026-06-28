@@ -13,6 +13,7 @@ if __name__ == "__main__":
             .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).where(State.name.like('%a%')).order_by(State.id)
+    result = session.query(State).where(
+            State.name.like('%a%')).order_by(State.id)
     for row in result:
         print(f"{row.id}: {row.name}")
