@@ -14,5 +14,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     result = session.query(State).order_by(State.id).limit(1)
+    if result.count() == 0:
+        print("Nothing")
+        exit
     for row in result:
         print("{}: {}".format(row.id, row.name))
