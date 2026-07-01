@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.sql import select
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from model_city import Base, City
+from model_city import City
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -17,7 +17,9 @@ if __name__ == "__main__":
 
     result = session.query(State.name, City.id, City.name)\
         .filter(City.state_id == State.id)\
-        .order_by(City.id)
+        .order_by(City.id).all()
 
     for row in result:
         print(f"{row[0]}: ({row[1]}) {row[2]}")
+
+    session.close()
