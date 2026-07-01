@@ -12,14 +12,15 @@ if __name__ == "__main__":
     engine = create_engine(
             'mysql+mysqldb://{}:{}@localhost:3306/{}'
             .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    Base.metadata.create_all(engine)    
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    result = session.query(State.name, City.id, City.name)\
+    
+    result = session.query(State, City)\
         .filter(City.state_id == State.id)\
         .order_by(City.id).all()
 
-    for row in result:
-        print(f"{row[0]}: ({row[1]}) {row[2]}")
+    for state, city in result:
+        print(f"{state.name}: ({city.id}) {city.name}")
 
     session.close()
