@@ -11,6 +11,10 @@ if __name__ == "__main__":
     engine = create_engine(
             'mysql+mysqldb://{}:{}@localhost:3306/{}'
             .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    
-    with engine.begin() as conn:
-        conn.execute(delete(State).where(State.name.like("%a%")))
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    session.query(State).filter(
+            State.name.like('%a%')
+            ).delete(synchronize_session='fetch')
+    session.commit()
