@@ -10,6 +10,6 @@ obj.display()
 obj.serialize("object.pkl")
 
 # Deserialize the object into a new instance
-new_obj = CustomObject.deserialize("object.pkl")
+new_obj = CustomObject.deserialize("data.json")
 print("\nDeserialized Object:")
 new_obj.display()
