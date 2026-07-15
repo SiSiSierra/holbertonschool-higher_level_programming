@@ -23,19 +23,21 @@ def generate_invitations(template, attendees):
     i = -1
     for person in attendees:
         i += 1
-        for item in person:
-            if person[item] is None:
-                person[item] = 'N/A'
         new = str(template)
-        new = new.replace("{name}", person["name"])
-        new = new.replace("{event_title}", person["event_title"])
-        new = new.replace("{event_date}", person["event_date"])
-        new = new.replace("{event_location}", person["event_location"])
+        keys = ["name", "event_title", "event_date", "event_location"]
+        for key in keys:
+            try:
+                j = person[key]
+                if j is None:
+                    raise KeyError
+            except KeyError:
+                person[key] = "N/A"
+            new = new.replace(f"{{{key}}}", person[key])
         try:
             name = f"output_{i}.txt"
             if os.path.exists(name):
                 print(f"{name} already exists.")
-                return
+                continue
             with open(name, "w") as f:
                 f.write(new)
         except Exception as e:
