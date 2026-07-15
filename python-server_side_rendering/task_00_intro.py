@@ -20,10 +20,9 @@ def generate_invitations(template, attendees):
         print('Attendess aren\'t all dicts, no output files generated.')
         return
 
-    i = -1
+    i = 0
     for person in attendees:
         i += 1
-        print("Making file")
         new = str(template)
         keys = ["name", "event_title", "event_date", "event_location"]
         for key in keys:
