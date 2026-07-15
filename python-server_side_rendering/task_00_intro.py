@@ -23,6 +23,7 @@ def generate_invitations(template, attendees):
     i = -1
     for person in attendees:
         i += 1
+        print("Making file")
         new = str(template)
         keys = ["name", "event_title", "event_date", "event_location"]
         for key in keys:
