@@ -20,6 +20,7 @@ def items():
     try:
         with open('items.json', 'r') as f:
             data = json.load(f)
+        data["items"]
     except:
         data = {"items":[]}
     return render_template('items.html', items=data)
