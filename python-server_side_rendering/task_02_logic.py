@@ -15,5 +15,11 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/items')
+def items():
+    with open('templates/items.json', 'r') as f:
+        data = json.load(f)
+    return render_template('items.html', items=data)
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
